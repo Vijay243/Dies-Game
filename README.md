@@ -1,2 +1,2 @@
 # Dies Game
- It is game for Entertainment
+ It is Game for Entertainment
