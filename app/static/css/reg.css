@@ -1,0 +1,18 @@
+body{
+    background-color: #ffcbf0;
+    background-size: 100%;
+    text-align: -webkit-center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+.box {
+    width: 600px;
+    height: 500px;
+    padding:  20px;
+    margin: 100px auto;
+
+    background-color: lavenderblush;
+    background-size: cover;
+    text-align: center;
+    opacity: 0.9;
+}

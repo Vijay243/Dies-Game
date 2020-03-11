@@ -1,0 +1,152 @@
+{% load static %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+</head>
+
+<body>
+    <table>
+    <tr>
+        <th colspan="4"><h1 style="text-align: center; color: darkgreen;font-size: 40px;font-family: Chiller">Who Got first 100</h1></th>
+    </tr>
+        <tr>
+            <th>
+                <table>
+                    <tr>
+                        <th>
+                           {% if message == "win1"%}
+                               <div class="box">
+                               <img src="{% static 'css/images/win.png' %}" width="500" height="500">
+                               </div>
+                            {% else %}
+                                <div class="box">
+                                <table align="center">
+                                    <tr>
+                                        <th style="text-align: center"><h1 style="color: blue"> Player 1</h1></th>
+                                    </tr>
+                                <tr>
+                                    <th>
+                                        <h3 style="color: darkcyan">Dies Cound : &nbsp;&nbsp;{{ c1 }}</h3>
+                                    </th>
+                                </tr>
+                                    <tr>
+                                        <th>Score : <h2 style="color: darkred;font-size: 30px">{{ p1 }}</h2>  </th>
+                                    {% if r1 %}<tr>
+                                        <th>
+                                        <br>
+
+                                            {% if r1  == 1 %}
+                                                <img src="{% static 'css/images/die1.png' %}" width="80" height="80">
+                                            {% endif %}
+                                            {% if r1  == 2 %}
+                                                <img src="{% static 'css/images/die2.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r1  == 3 %}
+                                                <img src="{% static 'css/images/die3.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r1  == 4 %}
+                                                <img src="{% static 'css/images/die4.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r1  == 5 %}
+                                                <img src="{% static 'css/images/die5.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r1  == 6 %}
+                                                <img src="{% static 'css/images/die6.png' %}" width="80" height="80">
+                                            {% endif %}
+                                    <br><br>
+                                        </th>
+                                    </tr>
+                                    {% endif %}
+                                    <tr>
+                                        <th>
+                                             <form action="{% url 'player1' %}" method="post">
+                                                 {% csrf_token %}
+                                            <button type="submit">
+                                            <img src="{% static 'css/images/dies.png' %}" width="80" height="80">
+                                            </button><br> <h3 style="color: darkred">Click Here</h3>
+                                            </form>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                            {% endif %}
+                        </th>
+                    </tr>
+                </table>
+
+            </th>
+           <th>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </th>
+            <th>
+                <table>
+                    <tr>
+                        <th>
+                           {% if message == "win2"%}
+                               <div class="box">
+                               <img src="{% static 'css/images/win.png' %}" width="500" height="500">
+                               </div>
+                            {% else %}
+                                <div class="box">
+                                <table align="center">
+                                    <tr>
+                                        <th style="text-align: center"><h1 style="color: blue"> Player 2</h1></th>
+                                    </tr>
+                                                                <tr>
+                                    <th>
+                                        <h3 style="color: darkcyan">Dies Cound : &nbsp;&nbsp;{{ c2 }}</h3>
+                                    </th>
+                                </tr>
+                                     <tr>
+                                        <th> Score :<h2 style="color: darkred;font-size: 30px">{{ p2 }}</h2>  </th>
+                                    </tr>
+                                    {% if r2 %}<tr>
+                                        <th>
+                                        <br>
+
+                                            {% if r2  == 1 %}
+                                                <img src="{% static 'css/images/die1.png' %}" width="80" height="80">
+                                            {% endif %}
+                                            {% if r2  == 2 %}
+                                                <img src="{% static 'css/images/die2.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r2  == 3 %}
+                                                <img src="{% static 'css/images/die3.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r2  == 4 %}
+                                                <img src="{% static 'css/images/die4.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r2  == 5 %}
+                                                <img src="{% static 'css/images/die5.png' %}" width="80" height="80">
+                                            {% endif %}
+                                        {% if r2  == 6 %}
+                                                <img src="{% static 'css/images/die6.png' %}" width="80" height="80">
+                                            {% endif %}
+                                    <br><br>
+                                        </th>
+                                    </tr>
+                                    {% endif %}
+                                     <tr>
+                                        <th>
+                                             <form action="{% url 'player2' %}" method="post">
+                                                 {% csrf_token %}
+                                            <button type="submit">
+                                            <img src="{% static 'css/images/dies.png' %}" width="80" height="80">
+                                                </button><br> <h3 style="color: darkred">Click Here</h3>
+                                            </form>
+                                        </th>
+                                    </tr>
+                                </table>
+                            </div>
+                            {% endif %}
+                        </th>
+                    </tr>
+                </table>
+            </th>
+
+        </tr>
+    </table>
+</body>
+</html>
